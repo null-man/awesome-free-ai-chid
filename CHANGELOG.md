@@ -9,6 +9,54 @@ files are append-only and are the source of truth. This file is the human-readab
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com).
 
+## [2026-10-24] — Weekly local refresh: a self-tuning agent backend, an Apple Silicon serving engine, and an on-device TTS runtime
+
+This refresh added 4 tools (101 → 105 local). Verified the README's
+local/paid/free counts against the actual CSV row counts via
+`python3 update.py`'s audit (72 free, 28 paid, 105 local). No drift found
+in existing local rows this week.
+
+### Added
+- **Magnitude** — Local Runner. Self-hosted local inference engine that
+  profiles the host machine and auto-tunes model kernels for it, exposing an
+  OpenAI- and Anthropic-compatible API as a drop-in local backend for
+  coding-agent harnesses (Claude Code, Cline, Codex); distinct from the
+  already-listed RamaLama/Lemonade SDK/llama-swap hardware-aware runners in
+  that its focus is per-machine kernel tuning for agent backends.
+  Apache-2.0, v0.2.10 released Oct 20 2026.
+- **ds4 (DwarfStar)** (antirez) — Local Runner. Local inference engine from
+  Redis creator antirez for running DeepSeek V4 Flash/Pro, GLM, and Qwen
+  models via Metal, CUDA, or ROCm, with SSD streaming for oversized models.
+  MIT, beta quality, commits through Oct 21 2026.
+- **oMLX** — Serving Engine. LLM inference server optimized for Apple
+  Silicon Macs with continuous batching and a tiered RAM/SSD KV cache,
+  exposing an OpenAI- and Anthropic-compatible API. Apache-2.0, commits
+  through Oct 23 2026.
+- **Phonon (Gradium)** — Audio & Speech. Open, on-device text-to-speech
+  runtime in Rust (no PyTorch) shipping CLI/Python/JS-WASM/Swift/Android/
+  Docker builds; the 31M-parameter English model starts speaking in
+  milliseconds on CPU alone. Code is MIT OR Apache-2.0; the 31m English
+  weights are Apache-2.0 but the larger 40m multilingual weights are CC
+  BY-NC 4.0 (non-commercial) — noted here for license-watchers, same as the
+  mixed-license pattern already flagged on the TADA row.
+
+### Considered but not added
+- **Qwen3-TTS** (QwenLM) — otherwise a strong Apache-2.0 candidate, but its
+  last commit is dated Mar 17 2026, more than 6 months before this refresh,
+  so it fails the "active in the past 6 months" bar.
+- **mlx-serve** (ddalcu) — a smaller, less mature Apple Silicon inference
+  server covering the same niche as the added oMLX; skipped to avoid
+  stacking two near-duplicate tools in one category in the same week, and
+  its license is internally inconsistent (README says MIT, repo sidebar
+  flags bundled Apache-2.0 code) which would need resolving before listing.
+
+### Drift check
+No archived/renamed/relicensed drift found in existing rows this week.
+
+### Cross-pathway duplicates
+None — checked all 4 new names/URLs against `resources.csv` and
+`paid_resources.csv`.
+
 ## [2026-10-17] — Weekly local refresh: a 34.6k-star roleplay frontend, a model-swapping proxy, Weaviate, and OpenAI's open weights
 
 This refresh added 5 tools. It builds on the still-open, unmerged
