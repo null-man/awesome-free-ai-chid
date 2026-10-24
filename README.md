@@ -107,6 +107,7 @@ Text-to-image tools that are free or have a meaningful free tier.
 - **[Ideogram](https://ideogram.ai)** — Text-to-image with strong typography. *Free tier available.*
 - **[Playground AI](https://playground.com)** — Image generation and editing. *Free tier available.*
 - **[Canva AI](https://canva.com)** — AI image generation and design tools. *Free tier with AI features.*
+- **[PromptImage](https://promptimage.cloud)** — Free AI image gallery + image/video generator. *Freemium free tier.*
 
 ## Video Generation
 AI tools for generating or editing video.
@@ -117,6 +118,7 @@ AI tools for generating or editing video.
 - **[Kling AI](https://kling.ai)** — High-quality text-to-video and image-to-video generation from Kuaishou. *Free tier: ~66 credits/month (daily login grants are now tied to paid plans; watermarked outputs).*
 - **[Pika](https://pika.art)** — AI video generation and image-animation with text-to-video controls. *Free plan with monthly credits.*
 - **[Dreamina (Seedance 2.0)](https://dreamina.capcut.com)** — ByteDance's text- and image-to-video generator running the Seedance 2.0 model with native audio. *Free daily credits (~2-3 videos/day) at up to 1080p, watermark-free.*
+- **[GrokVideo Studio](https://grokvideogenerator.dev)** — Independent text/image-to-video via xAI Grok Imagine API (not official xAI/X). *Free trial credits.*
 
 ## Audio & Voice
 Text-to-speech, voice cloning, and speech recognition.
